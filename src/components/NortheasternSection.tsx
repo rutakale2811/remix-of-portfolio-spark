@@ -28,8 +28,11 @@ const activities = [
 
 const NortheasternSection = () => {
   return (
-    <section id="northeastern" className="section-padding bg-card">
-      <div className="max-w-6xl mx-auto">
+    <section id="northeastern" className="relative section-padding overflow-hidden">
+      <div className="absolute inset-0 bg-card/40" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-primary/3 blur-3xl" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         <AnimatedSection>
           <p className="font-body text-sm tracking-[0.25em] uppercase text-primary mb-3">
             Life at Northeastern
@@ -48,9 +51,9 @@ const NortheasternSection = () => {
           {activities.map((activity, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
               <motion.div
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.03, y: -4 }}
                 transition={{ duration: 0.4 }}
-                className="relative p-8 rounded-2xl bg-background border border-border hover:border-primary/30 transition-all duration-500 h-full"
+                className="relative p-8 rounded-2xl bg-card/80 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.15)] transition-all duration-500 h-full"
               >
                 <div className="mb-5">{activity.icon}</div>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-1">{activity.title}</h3>

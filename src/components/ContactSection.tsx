@@ -4,8 +4,11 @@ import { Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="section-padding bg-card">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="contact" className="relative section-padding overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
+
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <AnimatedSection>
           <p className="font-body text-sm tracking-[0.25em] uppercase text-primary mb-3">Let's Connect</p>
           <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-6">
@@ -27,7 +30,7 @@ const ContactSection = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.98 }}
-              className="flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-body font-medium transition-shadow duration-300 hover:shadow-lg"
+              className="flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-body font-medium transition-shadow duration-300 hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)]"
             >
               <Linkedin size={20} />
               Connect on LinkedIn
@@ -38,7 +41,7 @@ const ContactSection = () => {
               href="mailto:kale.ru@northeastern.edu"
               whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.98 }}
-              className="flex items-center justify-center gap-3 px-8 py-4 border-2 border-foreground/15 text-foreground rounded-2xl font-body font-medium transition-all duration-300 hover:border-primary hover:text-primary"
+              className="flex items-center justify-center gap-3 px-8 py-4 border border-primary/30 text-foreground rounded-2xl font-body font-medium transition-all duration-300 hover:border-primary hover:text-primary"
             >
               <Mail size={20} />
               kale.ru@northeastern.edu
