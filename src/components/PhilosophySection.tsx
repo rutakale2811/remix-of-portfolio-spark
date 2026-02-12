@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
+import sectionBg from "@/assets/section-bg.jpg";
 
 const pillars = [
   {
@@ -21,8 +22,14 @@ const pillars = [
 
 const PhilosophySection = () => {
   return (
-    <section id="philosophy" className="section-padding bg-background overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section id="philosophy" className="relative section-padding overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0">
+        <img src={sectionBg} alt="" className="w-full h-full object-cover opacity-15" />
+        <div className="absolute inset-0 bg-background/90" />
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         <AnimatedSection>
           <p className="font-body text-sm tracking-[0.25em] uppercase text-primary mb-3">
             Marketing Philosophy
@@ -42,7 +49,7 @@ const PhilosophySection = () => {
                 transition={{ duration: 0.4 }}
                 className="text-center md:text-left"
               >
-                <span className="font-display text-5xl font-bold text-primary/20 mb-4 block">
+                <span className="font-display text-5xl font-bold text-primary/15 mb-4 block">
                   {pillar.number}
                 </span>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3 italic">
@@ -58,7 +65,10 @@ const PhilosophySection = () => {
 
         {/* What sets me apart */}
         <AnimatedSection>
-          <div className="relative rounded-3xl bg-card border border-border p-10 md:p-16">
+          <div className="relative rounded-3xl bg-card/80 backdrop-blur-sm border border-border p-10 md:p-16 overflow-hidden">
+            {/* Subtle gold accent */}
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+            
             <div className="max-w-3xl">
               <p className="font-body text-sm tracking-[0.25em] uppercase text-primary mb-4">What Sets Me Apart</p>
               <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight">
@@ -70,7 +80,7 @@ const PhilosophySection = () => {
                 think intentionally, and create work that resonates. Every project, every campaign, 
                 every conversation is an opportunity to add value.
               </p>
-              <div className="p-6 rounded-2xl bg-background border border-border">
+              <div className="p-6 rounded-2xl bg-background/50 border border-primary/15">
                 <p className="font-display text-xl md:text-2xl italic text-foreground leading-relaxed">
                   "Hiring me might feel like a gamble — but so is every decision that leads to{" "}
                   <span className="text-primary">growth.</span>"
@@ -90,10 +100,10 @@ const PhilosophySection = () => {
                     (word, j) => (
                       <span
                         key={j}
-                        className="font-display text-4xl md:text-6xl font-bold text-border/50 whitespace-nowrap"
+                        className="font-display text-4xl md:text-6xl font-bold text-border/40 whitespace-nowrap"
                       >
                         {word}
-                        <span className="text-primary mx-4">·</span>
+                        <span className="text-primary/40 mx-4">·</span>
                       </span>
                     )
                   )}

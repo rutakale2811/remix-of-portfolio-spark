@@ -38,8 +38,12 @@ const experiences = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="section-padding bg-card">
-      <div className="max-w-5xl mx-auto">
+    <section id="experience" className="relative section-padding overflow-hidden">
+      {/* Background accent */}
+      <div className="absolute inset-0 bg-card/50" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/3 blur-3xl" />
+
+      <div className="relative z-10 max-w-5xl mx-auto">
         <AnimatedSection>
           <p className="font-body text-sm tracking-[0.25em] uppercase text-primary mb-3">Experience</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -50,7 +54,7 @@ const ExperienceSection = () => {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-[1px] bg-border" />
+          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-[1px] bg-gradient-to-b from-primary/50 via-border to-border/30" />
 
           <div className="space-y-12">
             {experiences.map((exp, i) => (
@@ -61,7 +65,7 @@ const ExperienceSection = () => {
                   className="relative pl-8 md:pl-20"
                 >
                   {/* Dot */}
-                  <div className="absolute left-0 md:left-8 top-2 w-3 h-3 rounded-full bg-primary -translate-x-[5px]" />
+                  <div className="absolute left-0 md:left-8 top-2 w-3 h-3 rounded-full bg-primary -translate-x-[5px] shadow-[0_0_12px_hsl(var(--primary)/0.4)]" />
 
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
                     <div>
@@ -79,7 +83,7 @@ const ExperienceSection = () => {
                     {exp.tags.map((tag, j) => (
                       <span
                         key={j}
-                        className="px-3 py-1 text-xs font-body bg-secondary text-secondary-foreground rounded-full"
+                        className="px-3 py-1 text-xs font-body bg-secondary text-secondary-foreground rounded-full border border-border"
                       >
                         {tag}
                       </span>

@@ -1,6 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
-import { ExternalLink, TrendingUp } from "lucide-react";
+import { ExternalLink, TrendingUp, Star } from "lucide-react";
 import sectionBg from "@/assets/section-bg.jpg";
 
 const projects = [
@@ -59,8 +59,8 @@ const ProjectsSection = () => {
     <section id="projects" className="relative section-padding overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img src={sectionBg} alt="" className="w-full h-full object-cover opacity-15" />
-        <div className="absolute inset-0 bg-background/85" />
+        <img src={sectionBg} alt="" className="w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-background/80" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -79,16 +79,17 @@ const ProjectsSection = () => {
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.4 }}
-                className="group h-full p-8 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.15)] transition-all duration-500 flex flex-col relative overflow-hidden"
+                className="group h-full p-8 rounded-2xl bg-card/80 backdrop-blur-sm border border-border hover:border-primary/40 hover:shadow-[0_0_60px_-15px_hsl(var(--primary)/0.2)] transition-all duration-500 flex flex-col relative overflow-hidden"
               >
-                {/* Accent bar */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Gold accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="font-body text-xs tracking-[0.2em] uppercase text-primary bg-primary/10 px-3 py-1 rounded-full">
+                  <span className="font-body text-xs tracking-[0.2em] uppercase text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
                     {project.category}
                   </span>
-                  <span className="font-body text-[10px] tracking-wider uppercase text-muted-foreground bg-muted px-2 py-1 rounded-full">
+                  <span className="flex items-center gap-1 font-body text-[10px] tracking-wider uppercase text-primary/70 bg-primary/5 px-2 py-1 rounded-full">
+                    <Star size={10} className="fill-primary text-primary" />
                     Featured
                   </span>
                 </div>
@@ -98,7 +99,7 @@ const ProjectsSection = () => {
                 <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
                   {project.description}
                 </p>
-                <div className="flex items-center gap-2 pt-4 border-t border-border">
+                <div className="flex items-center gap-2 pt-4 border-t border-border/50">
                   <TrendingUp size={16} className="text-primary" />
                   <span className="font-body text-sm font-semibold text-primary">{project.outcome}</span>
                 </div>
@@ -114,9 +115,9 @@ const ProjectsSection = () => {
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.4 }}
-                className="group h-full p-7 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-[0_15px_40px_-10px_hsl(var(--primary)/0.1)] transition-all duration-500 flex flex-col"
+                className="group h-full p-7 rounded-2xl bg-card/60 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.15)] transition-all duration-500 flex flex-col"
               >
-                <span className="font-body text-xs tracking-[0.2em] uppercase text-primary bg-primary/10 px-3 py-1 rounded-full self-start mb-3">
+                <span className="font-body text-xs tracking-[0.2em] uppercase text-primary bg-primary/10 px-3 py-1 rounded-full self-start mb-3 border border-primary/15">
                   {project.category}
                 </span>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
@@ -125,7 +126,7 @@ const ProjectsSection = () => {
                 <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
                   {project.description}
                 </p>
-                <div className="flex items-center gap-2 pt-4 border-t border-border">
+                <div className="flex items-center gap-2 pt-4 border-t border-border/50">
                   <ExternalLink size={14} className="text-primary" />
                   <span className="font-body text-sm font-medium text-primary">{project.outcome}</span>
                 </div>
