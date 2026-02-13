@@ -57,26 +57,26 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        midnight: {
-          DEFAULT: "hsl(var(--midnight))",
-          light: "hsl(var(--midnight-light))",
+        cream: {
+          DEFAULT: "hsl(var(--cream))",
+          dark: "hsl(var(--cream-dark))",
         },
-        navy: "hsl(var(--navy))",
-        champagne: {
-          DEFAULT: "hsl(var(--champagne))",
-          light: "hsl(var(--champagne-light))",
-          dark: "hsl(var(--champagne-dark))",
+        latte: "hsl(var(--latte))",
+        espresso: {
+          DEFAULT: "hsl(var(--espresso))",
+          light: "hsl(var(--espresso-light))",
         },
-        ivory: {
-          DEFAULT: "hsl(var(--ivory))",
-          muted: "hsl(var(--ivory-muted))",
+        warm: {
+          DEFAULT: "hsl(var(--warm))",
+          light: "hsl(var(--warm-light))",
+          dark: "hsl(var(--warm-dark))",
         },
-        steel: "hsl(var(--steel))",
-        gold: "hsl(var(--gold))",
+        sand: "hsl(var(--sand))",
+        charcoal: "hsl(var(--charcoal))",
       },
       fontFamily: {
-        display: ["Playfair Display", "serif"],
-        body: ["Inter", "sans-serif"],
+        display: ["Cormorant Garamond", "serif"],
+        body: ["Outfit", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
