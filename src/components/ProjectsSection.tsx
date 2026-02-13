@@ -1,7 +1,7 @@
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
 import { ArrowUpRight, TrendingUp, Star } from "lucide-react";
-import sectionBg from "@/assets/section-bg.jpg";
+import projectsImg from "@/assets/projects-img.jpg";
 
 const projects = [
   {
@@ -51,55 +51,54 @@ const projects = [
 const ProjectsSection = () => {
   return (
     <section id="projects" className="relative section-padding overflow-hidden">
-      {/* Subtle texture */}
-      <div className="absolute inset-0">
-        <img src={sectionBg} alt="" className="w-full h-full object-cover opacity-15" />
-        <div className="absolute inset-0 bg-background/85" />
-      </div>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Header with image */}
+        <div className="grid md:grid-cols-2 gap-12 mb-20 items-end">
+          <AnimatedSection>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="divider-line" />
+              <p className="font-body text-xs tracking-[0.4em] uppercase text-accent font-semibold">Selected Work</p>
+            </div>
+            <h2 className="font-display text-6xl md:text-7xl font-black text-foreground leading-[0.95]">
+              Bold moves,<br /><span className="italic font-normal text-accent">big results</span>
+            </h2>
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
+            <div className="aspect-[16/9] overflow-hidden">
+              <img src={projectsImg} alt="NYC skyline" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+            </div>
+          </AnimatedSection>
+        </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <AnimatedSection>
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3">Selected Work</p>
-          <h2 className="font-display text-5xl md:text-6xl font-light text-foreground mb-6">
-            Work that <span className="italic text-gradient">speaks</span>
-          </h2>
-          <div className="divider-line mb-16" />
-        </AnimatedSection>
-
-        {/* Featured projects */}
+        {/* Featured projects - editorial cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           {projects.filter(p => p.featured).map((project, i) => (
             <AnimatedSection key={i} delay={i * 0.1}>
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.4 }}
-                className="group h-full p-8 md:p-10 rounded-2xl bg-card border border-border hover:border-accent/40 hover:shadow-[0_20px_60px_-15px_hsl(var(--espresso)/0.1)] transition-all duration-500 flex flex-col relative overflow-hidden"
+                className="group h-full p-10 bg-card border-l-4 border-l-accent border border-border hover:shadow-[0_25px_60px_-15px_hsl(var(--noir)/0.12)] transition-all duration-500 flex flex-col"
               >
-                {/* Top accent */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="font-body text-[11px] tracking-[0.2em] uppercase text-accent bg-accent/10 px-3 py-1 rounded-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="font-body text-[11px] tracking-[0.3em] uppercase font-semibold text-accent">
                     {project.category}
                   </span>
-                  <span className="flex items-center gap-1 font-body text-[10px] tracking-wider uppercase text-accent/70">
-                    <Star size={10} className="fill-accent text-accent" />
-                    Featured
-                  </span>
+                  <Star size={12} className="fill-accent text-accent" />
+                  <span className="font-body text-[10px] tracking-wider uppercase text-accent">Featured</span>
                 </div>
 
-                <h3 className="font-display text-2xl md:text-3xl font-medium text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
+                <h3 className="font-display text-3xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="font-body text-sm text-muted-foreground leading-[1.8] mb-8 flex-1">
+                <p className="font-body text-sm text-muted-foreground leading-[1.9] mb-8 flex-1">
                   {project.description}
                 </p>
-                <div className="flex items-center justify-between pt-5 border-t border-border">
+                <div className="flex items-center justify-between pt-6 border-t border-border">
                   <div className="flex items-center gap-2">
                     <TrendingUp size={16} className="text-accent" />
-                    <span className="font-body text-sm font-medium text-foreground">{project.outcome}</span>
+                    <span className="font-body text-sm font-bold text-foreground">{project.outcome}</span>
                   </div>
-                  <ArrowUpRight size={18} className="text-muted-foreground group-hover:text-accent transition-colors duration-300" />
+                  <ArrowUpRight size={20} className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
                 </div>
               </motion.div>
             </AnimatedSection>
@@ -113,15 +112,15 @@ const ProjectsSection = () => {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.4 }}
-                className="group h-full p-7 rounded-2xl bg-card/60 border border-border hover:border-accent/30 transition-all duration-500 flex flex-col"
+                className="group h-full p-8 bg-card border border-border hover:border-accent/40 transition-all duration-500 flex flex-col"
               >
-                <span className="font-body text-[11px] tracking-[0.2em] uppercase text-accent bg-accent/10 px-3 py-1 rounded-full self-start mb-4">
+                <span className="font-body text-[10px] tracking-[0.3em] uppercase font-semibold text-accent mb-4 block">
                   {project.category}
                 </span>
-                <h3 className="font-display text-xl font-medium text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+                <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="font-body text-sm text-muted-foreground leading-[1.7] mb-5 flex-1">
+                <p className="font-body text-sm text-muted-foreground leading-[1.8] mb-5 flex-1">
                   {project.description}
                 </p>
                 <div className="flex items-center gap-2 pt-4 border-t border-border">

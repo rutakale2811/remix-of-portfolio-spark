@@ -1,6 +1,7 @@
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
 import { Users, GraduationCap, Palette } from "lucide-react";
+import northeasternImg from "@/assets/northeastern-img.jpg";
 
 const activities = [
   {
@@ -25,19 +26,29 @@ const activities = [
 
 const NortheasternSection = () => {
   return (
-    <section id="northeastern" className="relative section-padding overflow-hidden">
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <AnimatedSection>
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3">Life at Northeastern</p>
-          <h2 className="font-display text-5xl md:text-6xl font-light text-foreground mb-6">
-            Beyond the <span className="italic text-gradient">classroom</span>
-          </h2>
-          <div className="divider-line mb-6" />
-          <p className="font-body text-base text-muted-foreground max-w-3xl leading-[1.8] mb-16">
-            My time at Northeastern is defined by doing — not just learning. From leading communications
-            to designing costumes, every role has shaped who I am as a marketer and a person.
-          </p>
-        </AnimatedSection>
+    <section id="northeastern" className="relative section-padding overflow-hidden bg-card">
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 mb-16 items-center">
+          <AnimatedSection>
+            <div className="aspect-square overflow-hidden max-w-md">
+              <img src={northeasternImg} alt="Northeastern campus" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="divider-line" />
+              <p className="font-body text-xs tracking-[0.4em] uppercase text-accent font-semibold">Life at Northeastern</p>
+            </div>
+            <h2 className="font-display text-5xl md:text-6xl font-black text-foreground mb-6">
+              Beyond the<br /><span className="italic font-normal text-accent">classroom</span>
+            </h2>
+            <p className="font-body text-base text-muted-foreground leading-[1.9]">
+              My time at Northeastern is defined by doing — not just learning. From leading communications
+              to designing costumes, every role has shaped who I am as a marketer and a person.
+            </p>
+          </AnimatedSection>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {activities.map((activity, i) => (
@@ -45,12 +56,12 @@ const NortheasternSection = () => {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.4 }}
-                className="relative p-8 rounded-2xl bg-card border border-border hover:border-accent/30 transition-all duration-500 h-full"
+                className="relative p-8 bg-background border-t-2 border-t-accent border border-border hover-lift h-full"
               >
                 <div className="mb-5">{activity.icon}</div>
-                <h3 className="font-display text-xl font-medium text-foreground mb-1">{activity.title}</h3>
-                <p className="font-body text-sm text-accent mb-4">{activity.org}</p>
-                <p className="font-body text-sm text-muted-foreground leading-[1.8]">{activity.description}</p>
+                <h3 className="font-display text-xl font-bold text-foreground mb-1">{activity.title}</h3>
+                <p className="font-body text-sm text-accent font-medium mb-4">{activity.org}</p>
+                <p className="font-body text-sm text-muted-foreground leading-[1.9]">{activity.description}</p>
               </motion.div>
             </AnimatedSection>
           ))}
