@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
+import experienceImg from "@/assets/experience-img.jpg";
 
 const experiences = [
   {
@@ -34,51 +35,52 @@ const experiences = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="relative section-padding overflow-hidden">
-      <div className="absolute inset-0 bg-card/30" />
+    <section id="experience" className="relative section-padding overflow-hidden bg-card">
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-[0.4fr_1fr] gap-16">
+          {/* Left: image + header */}
+          <div>
+            <AnimatedSection>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="divider-line" />
+                <p className="font-body text-xs tracking-[0.4em] uppercase text-accent font-semibold">Experience</p>
+              </div>
+              <h2 className="font-display text-5xl md:text-6xl font-black text-foreground mb-10">
+                The <span className="italic font-normal text-accent">journey</span>
+              </h2>
+            </AnimatedSection>
+            <AnimatedSection delay={0.1}>
+              <div className="aspect-[3/4] overflow-hidden sticky top-24">
+                <img src={experienceImg} alt="Working" className="w-full h-full object-cover" />
+              </div>
+            </AnimatedSection>
+          </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto">
-        <AnimatedSection>
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3">Experience</p>
-          <h2 className="font-display text-5xl md:text-6xl font-light text-foreground mb-6">
-            Where I've <span className="italic text-gradient">grown</span>
-          </h2>
-          <div className="divider-line mb-16" />
-        </AnimatedSection>
-
-        <div className="relative">
-          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-[1px] bg-gradient-to-b from-accent/50 via-border to-transparent" />
-
-          <div className="space-y-14">
-            {experiences.map((exp, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{ x: 6 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative pl-8 md:pl-20"
-                >
-                  <div className="absolute left-0 md:left-8 top-2 w-2.5 h-2.5 rounded-full bg-accent -translate-x-[4px]" />
-
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
-                    <div>
-                      <h3 className="font-display text-2xl font-medium text-foreground">{exp.role}</h3>
-                      <p className="font-body text-sm text-accent">{exp.company}</p>
+          {/* Right: timeline */}
+          <div>
+            <div className="space-y-16 pt-8">
+              {experiences.map((exp, i) => (
+                <AnimatedSection key={i} delay={i * 0.1}>
+                  <motion.div
+                    whileHover={{ x: 6 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative border-b border-border pb-12"
+                  >
+                    <span className="font-body text-xs tracking-[0.3em] uppercase text-accent font-semibold">{exp.period}</span>
+                    <h3 className="font-display text-3xl font-bold text-foreground mt-2 mb-1">{exp.role}</h3>
+                    <p className="font-body text-sm text-accent mb-4">{exp.company}</p>
+                    <p className="font-body text-sm text-muted-foreground leading-[1.9] mb-5">{exp.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.tags.map((tag, j) => (
+                        <span key={j} className="px-3 py-1 text-[11px] font-body font-medium uppercase tracking-wider bg-background text-foreground border border-border">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                    <span className="font-body text-xs tracking-wider text-muted-foreground whitespace-nowrap uppercase">{exp.period}</span>
-                  </div>
-
-                  <p className="font-body text-sm text-muted-foreground leading-[1.8] mb-4">{exp.description}</p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {exp.tags.map((tag, j) => (
-                      <span key={j} className="px-3 py-1 text-xs font-body bg-secondary text-secondary-foreground rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              </AnimatedSection>
-            ))}
+                  </motion.div>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </div>
       </div>

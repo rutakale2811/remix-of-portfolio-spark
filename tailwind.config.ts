@@ -62,21 +62,22 @@ export default {
           dark: "hsl(var(--cream-dark))",
         },
         latte: "hsl(var(--latte))",
-        espresso: {
-          DEFAULT: "hsl(var(--espresso))",
-          light: "hsl(var(--espresso-light))",
+        noir: {
+          DEFAULT: "hsl(var(--noir))",
+          light: "hsl(var(--noir-light))",
         },
-        warm: {
-          DEFAULT: "hsl(var(--warm))",
-          light: "hsl(var(--warm-light))",
-          dark: "hsl(var(--warm-dark))",
+        rose: {
+          DEFAULT: "hsl(var(--rose))",
+          light: "hsl(var(--rose-light))",
+          dark: "hsl(var(--rose-dark))",
         },
         sand: "hsl(var(--sand))",
-        charcoal: "hsl(var(--charcoal))",
+        smoke: "hsl(var(--smoke))",
+        blush: "hsl(var(--blush))",
       },
       fontFamily: {
-        display: ["Cormorant Garamond", "serif"],
-        body: ["Outfit", "sans-serif"],
+        display: ["Playfair Display", "serif"],
+        body: ["DM Sans", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
