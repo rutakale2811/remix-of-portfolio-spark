@@ -2,6 +2,7 @@ import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
 import { ArrowUpRight, TrendingUp, Star } from "lucide-react";
 import projectsImg from "@/assets/projects-img.jpg";
+import tejaBhaiImg from "@/assets/teja-bhai-campaign.png";
 
 const projects = [
   {
@@ -19,6 +20,7 @@ const projects = [
     outcome: "+12,500 reach · +25,000 impressions · 4,000+ reel views",
     featured: true,
     extra: "Strengthened brand relatability within Gen Z & millennial audiences",
+    image: tejaBhaiImg,
   },
   {
     title: "Guest Experience Optimization",
@@ -99,6 +101,11 @@ const ProjectsSection = () => {
                 <p className="font-body text-sm text-muted-foreground leading-[1.9] mb-4 flex-1">
                   {project.description}
                 </p>
+                {project.image && (
+                  <div className="mb-4 overflow-hidden border border-border">
+                    <img src={project.image} alt={project.title} className="w-full h-auto object-contain" />
+                  </div>
+                )}
                 {project.extra && (
                   <p className="font-body text-xs italic text-accent mb-6">{project.extra}</p>
                 )}
