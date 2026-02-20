@@ -4,32 +4,36 @@ import experienceImg from "@/assets/experience-img.jpg";
 
 const experiences = [
   {
-    role: "Guest Experience Optimization",
-    company: "New England Zoo",
-    period: "Jan 2026 – April 2026",
-    description: "Leading a service innovation project focused on improving the end-to-end guest check-in and entry experience. Applying the Gaps Model of Service Quality (SERVQUAL) to identify breakdowns, redesigning check-in processes, and mapping customer journeys to improve service blueprinting.",
-    tags: ["Service Design", "Customer Journey Mapping", "SERVQUAL", "CX Strategy"],
+    role: "Marketing & Comms Assistant",
+    company: "Community Engaged Teaching & Research, Northeastern University",
+    location: "Boston, USA",
+    period: "Jan 2026 – Present",
+    description: "Manage and execute CETR's marketing strategies, driving social media presence using Canva and Adobe. Lead WordPress website design and updates. Plan, promote, and coordinate high-impact academic and community events including workshops and orientations.",
+    tags: ["Social Media", "WordPress", "Event Marketing", "Adobe Suite"],
   },
   {
-    role: "Marketing Research Consultant",
-    company: "Central Square Florist",
-    period: "2025",
-    description: "Partnering as a marketing researcher to improve brand positioning and customer acquisition strategy. Designing Qualtrics surveys, conducting competitive analysis, analyzing consumer buying behavior, and delivering insights for digital marketing optimization.",
-    tags: ["Marketing Research", "Qualtrics", "Consumer Insights", "Competitive Analysis"],
+    role: "Digital Marketing Associate Co-op",
+    company: "TeamLogicIT",
+    location: "Ohio, USA",
+    period: "Apr 2025 – June 2025",
+    description: "Designed and scheduled daily social posts and monthly email newsletters using Adobe Suite, Canva, Sora, and Midjourney. Conducted B2B market research using AI-driven sentiment analysis tools and Google Trends. Brainstormed targeted outreach strategies for B2B decision makers.",
+    tags: ["B2B Marketing", "AI Tools", "Email Marketing", "Content Design"],
   },
   {
-    role: "UX Researcher",
-    company: "Prescott Women's Suits",
-    period: "Jan 2024 – Mar 2024",
-    description: "Led user research and prototype development to enhance customer purchase experience. Defined user personas, conducted qualitative research, designed wireframes and prototypes in Figma, and optimized the user journey for product discoverability.",
-    tags: ["UX Research", "Figma", "User Personas", "Wireframing"],
+    role: "Marketing Intern",
+    company: "Homework Studios",
+    location: "Mumbai, India",
+    period: "Mar 2023 – Aug 2023",
+    description: "Executed multi-channel marketing campaigns for Uber India, Spotify India, and Sony LIV. Collaborated on the Spotify × IFP \"Mellow Hours\" campaign, managing event logistics and live coverage. Increased page lead conversions by 15%.",
+    tags: ["Campaign Management", "Brand Strategy", "Spotify", "Uber India"],
   },
   {
-    role: "Costume Designer & Technical Crew",
-    company: "New Renaissance Theatre Company",
-    period: "2024",
-    description: "Designed and styled costumes aligned with character arcs and production aesthetics. Managed budget allocation and material sourcing, coordinated wardrobe logistics, and supported backstage technical operations during live performances.",
-    tags: ["Creative Direction", "Budget Management", "Production Design", "Live Events"],
+    role: "Social Media Intern",
+    company: "iProspect Dentsu",
+    location: "Mumbai, India",
+    period: "Apr 2022 – May 2022",
+    description: "Developed social media strategies for SBI, ICICI Direct, and Angel One — including the iconic TEJA BHAI campaign driving 20% engagement increase. Executed bid management for paid search campaigns and delivered bi-weekly KPI reports to the marketing director.",
+    tags: ["Paid Media", "Financial Marketing", "Salesforce", "Campaign Analytics"],
   },
 ];
 
@@ -68,7 +72,8 @@ const ExperienceSection = () => {
                   >
                     <span className="font-body text-xs tracking-[0.3em] uppercase text-accent font-semibold">{exp.period}</span>
                     <h3 className="font-display text-3xl font-bold text-foreground mt-2 mb-1">{exp.role}</h3>
-                    <p className="font-body text-sm text-accent mb-4">{exp.company}</p>
+                    <p className="font-body text-sm text-accent mb-1">{exp.company}</p>
+                    <p className="font-body text-xs text-muted-foreground mb-4">{exp.location}</p>
                     <p className="font-body text-sm text-muted-foreground leading-[1.9] mb-5">{exp.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {exp.tags.map((tag, j) => (

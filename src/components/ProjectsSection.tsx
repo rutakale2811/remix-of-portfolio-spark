@@ -8,51 +8,50 @@ const projects = [
   {
     title: "Metta Mindfulness Music",
     category: "Digital Branding — Capstone",
-    description: "Led an end-to-end digital marketing strategy for a global mindfulness and music brand in collaboration with Yuval Ron. Conducted full platform audits for Bandcamp and SoundCloud, designed social content calendars aligned with audience segmentation.",
-    outcome: "Increased Bandcamp sales by 10%",
+    description: "Led an end-to-end digital marketing strategy for a global mindfulness brand in collaboration with 6x Grammy-nominated artist Yuval Ron. Conducted platform audits for Bandcamp and SoundCloud, designed social content calendars aligned with audience segmentation.",
+    outcome: "Increased Bandcamp sales by 10% · Featured on Northeastern's official platform",
     featured: true,
-    extra: "Featured on Northeastern University's official academic platform",
+    image: null,
   },
   {
     title: "\"The Teja Bhai Campaign\" – Angel One",
     category: "Financial Marketing",
-    description: "Executed a high-impact financial marketing campaign for Angel One, listed on BSE, NSE, NCDEX & MCX. Developed creative storytelling aligned with retail investor psychology and leveraged short-form video to increase engagement and financial literacy awareness.",
-    outcome: "+12,500 reach · +25,000 impressions · 4,000+ reel views",
+    description: "Developed social media strategies for Angel One at iProspect Dentsu, including the iconic TEJA BHAI campaign. Created creative storytelling aligned with retail investor psychology and leveraged short-form video for financial literacy awareness.",
+    outcome: "+12,500 reach · +25,000 impressions · 20% engagement increase",
     featured: true,
-    extra: "Strengthened brand relatability within Gen Z & millennial audiences",
     image: tejaBhaiImg,
   },
   {
     title: "Guest Experience Optimization",
     category: "Service Design",
-    description: "Service innovation project at New England Zoo focused on improving guest check-in and entry experience. Applied the Gaps Model (SERVQUAL), redesigned processes to reduce friction and wait times, and delivered strategic recommendations.",
+    description: "Service innovation project at New England Zoo focused on improving guest check-in and entry experience. Applied SERVQUAL Gaps Model, redesigned processes to reduce friction, and delivered a complete service blueprint.",
     outcome: "End-to-end service blueprint delivered",
     featured: true,
-    extra: null,
+    image: null,
   },
   {
-    title: "Central Square Florist",
+    title: "We Grow Microgreens: SEO Strategy",
+    category: "SEO & Brand Implementation",
+    description: "Identified limited online reach and implemented targeted SEO and keyword optimization using MOZ and Semrush to benchmark, providing actionable insights for market positioning and boosting online visibility.",
+    outcome: "Boosted online visibility & positioning",
+    featured: false,
+    image: null,
+  },
+  {
+    title: "Marketing Research – Central Square Florist",
     category: "Marketing Research",
-    description: "Partnered as a marketing researcher to improve brand positioning. Designed Qualtrics surveys, conducted competitive analysis, and analyzed consumer buying behavior and seasonal demand patterns.",
+    description: "Designed Qualtrics surveys, conducted competitive analysis, analyzed consumer buying behavior and seasonal demand patterns to improve brand positioning and customer acquisition strategy.",
     outcome: "Actionable digital marketing insights delivered",
     featured: false,
-    extra: null,
+    image: null,
   },
   {
-    title: "Prescott Women's Suits",
+    title: "UX Research – Prescott Women's Suits",
     category: "UX Research",
-    description: "Led user research and prototype development. Defined user personas, mapped behavioral patterns, designed wireframes in Figma, and optimized the user journey for product discoverability and engagement.",
+    description: "Led user research and prototype development. Defined user personas, mapped behavioral patterns, designed wireframes in Figma, and optimized the user journey for product discoverability.",
     outcome: "Improved conversion strategy & brand experience",
     featured: false,
-    extra: null,
-  },
-  {
-    title: "Husky Communicators Digital Growth",
-    category: "Social Media Strategy",
-    description: "Developed and executed social media content strategy for Northeastern's student-run communications org. Launched Husky Talks podcast, organized co-op panels, LinkedIn photoshoots, and Friendsgiving networking events.",
-    outcome: "Strengthened cross-campus engagement",
-    featured: false,
-    extra: null,
+    image: null,
   },
 ];
 
@@ -60,12 +59,12 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="relative section-padding overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Header with image */}
+        {/* Header */}
         <div className="grid md:grid-cols-2 gap-12 mb-20 items-end">
           <AnimatedSection>
             <div className="flex items-center gap-4 mb-4">
               <div className="divider-line" />
-              <p className="font-body text-xs tracking-[0.4em] uppercase text-accent font-semibold">Selected Work</p>
+              <p className="font-body text-xs tracking-[0.4em] uppercase text-accent font-semibold">Academic Projects</p>
             </div>
             <h2 className="font-display text-6xl md:text-7xl font-black text-foreground leading-[0.95]">
               Bold moves,<br /><span className="italic font-normal text-accent">big results</span>
@@ -105,9 +104,6 @@ const ProjectsSection = () => {
                   <div className="mb-4 overflow-hidden border border-border">
                     <img src={project.image} alt={project.title} className="w-full h-auto object-contain" />
                   </div>
-                )}
-                {project.extra && (
-                  <p className="font-body text-xs italic text-accent mb-6">{project.extra}</p>
                 )}
                 <div className="flex items-center justify-between pt-6 border-t border-border">
                   <div className="flex items-center gap-2">
