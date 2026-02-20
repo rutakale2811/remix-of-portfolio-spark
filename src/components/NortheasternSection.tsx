@@ -1,6 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
-import { Users, GraduationCap, Palette } from "lucide-react";
+import { Users, GraduationCap, Palette, Mic } from "lucide-react";
 import northeasternImg from "@/assets/northeastern-img.jpg";
 
 const activities = [
@@ -8,19 +8,25 @@ const activities = [
     icon: <Users className="text-accent" size={28} />,
     title: "Social Media Coordinator",
     org: "Husky Communicators",
-    description: "Leading digital strategy for Northeastern's student-run communications organization. I manage content creation, oversee editorial calendars, and drive engagement across platforms — turning student stories into compelling narratives.",
+    description: "Leading digital growth and community engagement strategy. Developed content strategy, launched the Husky Talks podcast, and organized signature events — co-op panels, LinkedIn photoshoots, and Friendsgiving networking.",
   },
   {
     icon: <GraduationCap className="text-accent" size={28} />,
     title: "Teaching & Research Assistant",
     org: "Northeastern University",
-    description: "Bridging the gap between theory and practice. As a TA, I mentor students and facilitate learning. As an RA, I dive deep into communications research — sharpening my analytical skills while contributing to academic knowledge.",
+    description: "Bridging theory and practice. As a TA, I mentor students and facilitate learning. As an RA, I dive deep into communications research — sharpening analytical skills while contributing to academic knowledge.",
   },
   {
     icon: <Palette className="text-accent" size={28} />,
-    title: "Costume Designer",
+    title: "Costume Designer & Tech Crew",
     org: "New Renaissance Theatre Company",
-    description: "Bringing characters to life through costume design. This creative outlet feeds my understanding of visual storytelling, brand identity, and the power of first impressions — skills that directly translate to marketing.",
+    description: "Bringing characters to life through costume design. Managing budget allocation, material sourcing, and wardrobe logistics — balancing artistic vision with financial constraints and production deadlines.",
+  },
+  {
+    icon: <Mic className="text-accent" size={28} />,
+    title: "Event Producer & Community Builder",
+    org: "Campus Leadership",
+    description: "Organized and hosted signature campus events blending digital marketing strategy with community building and experiential branding — from networking panels to creative showcases.",
   },
 ];
 
@@ -45,12 +51,12 @@ const NortheasternSection = () => {
             </h2>
             <p className="font-body text-base text-muted-foreground leading-[1.9]">
               My time at Northeastern is defined by doing — not just learning. From leading communications
-              to designing costumes, every role has shaped who I am as a marketer and a person.
+              to designing costumes to producing events, every role has shaped who I am as a marketer and creative strategist.
             </p>
           </AnimatedSection>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {activities.map((activity, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
               <motion.div

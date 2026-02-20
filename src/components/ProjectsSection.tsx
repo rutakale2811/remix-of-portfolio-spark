@@ -5,46 +5,52 @@ import projectsImg from "@/assets/projects-img.jpg";
 
 const projects = [
   {
-    title: "Brand Repositioning Campaign",
-    category: "Brand Strategy",
-    description: "Led a comprehensive brand repositioning effort that included market research, competitor analysis, messaging framework development, and a multi-channel launch strategy.",
-    outcome: "Increased brand awareness by 40%",
+    title: "Metta Mindfulness Music",
+    category: "Digital Branding — Capstone",
+    description: "Led an end-to-end digital marketing strategy for a global mindfulness and music brand in collaboration with Yuval Ron. Conducted full platform audits for Bandcamp and SoundCloud, designed social content calendars aligned with audience segmentation.",
+    outcome: "Increased Bandcamp sales by 10%",
     featured: true,
+    extra: "Featured on Northeastern University's official academic platform",
   },
   {
-    title: "Social Media Growth Strategy",
-    category: "Social Media",
-    description: "Designed and executed a 90-day social media growth plan for an emerging brand, leveraging content pillars, audience segmentation, and engagement-driven tactics.",
-    outcome: "Grew following by 200% in 3 months",
+    title: "\"The Teja Bhai Campaign\" – Angel One",
+    category: "Financial Marketing",
+    description: "Executed a high-impact financial marketing campaign for Angel One, listed on BSE, NSE, NCDEX & MCX. Developed creative storytelling aligned with retail investor psychology and leveraged short-form video to increase engagement and financial literacy awareness.",
+    outcome: "+12,500 reach · +25,000 impressions · 4,000+ reel views",
     featured: true,
+    extra: "Strengthened brand relatability within Gen Z & millennial audiences",
   },
   {
-    title: "Email Marketing Automation",
-    category: "Email Marketing",
-    description: "Built an automated email nurture sequence that personalized messaging based on user behavior, improving conversion rates and customer retention.",
-    outcome: "35% increase in open rates",
-    featured: false,
-  },
-  {
-    title: "Content Marketing Playbook",
-    category: "Content Strategy",
-    description: "Created a comprehensive content marketing playbook for a startup, including editorial calendar, SEO strategy, and content distribution framework.",
-    outcome: "50% increase in organic traffic",
+    title: "Guest Experience Optimization",
+    category: "Service Design",
+    description: "Service innovation project at New England Zoo focused on improving guest check-in and entry experience. Applied the Gaps Model (SERVQUAL), redesigned processes to reduce friction and wait times, and delivered strategic recommendations.",
+    outcome: "End-to-end service blueprint delivered",
     featured: true,
+    extra: null,
   },
   {
-    title: "Event Marketing Campaign",
-    category: "Event Marketing",
-    description: "Planned and executed a multi-platform event marketing campaign including social media teasers, influencer partnerships, and post-event content repurposing.",
-    outcome: "Sold out event with 500+ attendees",
+    title: "Central Square Florist",
+    category: "Marketing Research",
+    description: "Partnered as a marketing researcher to improve brand positioning. Designed Qualtrics surveys, conducted competitive analysis, and analyzed consumer buying behavior and seasonal demand patterns.",
+    outcome: "Actionable digital marketing insights delivered",
     featured: false,
+    extra: null,
   },
   {
-    title: "Digital Ad Campaign Optimization",
-    category: "Paid Media",
-    description: "Optimized paid advertising campaigns across Google Ads and Meta, implementing A/B testing frameworks and audience refinement strategies.",
-    outcome: "Reduced CPA by 45%",
+    title: "Prescott Women's Suits",
+    category: "UX Research",
+    description: "Led user research and prototype development. Defined user personas, mapped behavioral patterns, designed wireframes in Figma, and optimized the user journey for product discoverability and engagement.",
+    outcome: "Improved conversion strategy & brand experience",
     featured: false,
+    extra: null,
+  },
+  {
+    title: "Husky Communicators Digital Growth",
+    category: "Social Media Strategy",
+    description: "Developed and executed social media content strategy for Northeastern's student-run communications org. Launched Husky Talks podcast, organized co-op panels, LinkedIn photoshoots, and Friendsgiving networking events.",
+    outcome: "Strengthened cross-campus engagement",
+    featured: false,
+    extra: null,
   },
 ];
 
@@ -70,7 +76,7 @@ const ProjectsSection = () => {
           </AnimatedSection>
         </div>
 
-        {/* Featured projects - editorial cards */}
+        {/* Featured projects */}
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           {projects.filter(p => p.featured).map((project, i) => (
             <AnimatedSection key={i} delay={i * 0.1}>
@@ -90,9 +96,12 @@ const ProjectsSection = () => {
                 <h3 className="font-display text-3xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="font-body text-sm text-muted-foreground leading-[1.9] mb-8 flex-1">
+                <p className="font-body text-sm text-muted-foreground leading-[1.9] mb-4 flex-1">
                   {project.description}
                 </p>
+                {project.extra && (
+                  <p className="font-body text-xs italic text-accent mb-6">{project.extra}</p>
+                )}
                 <div className="flex items-center justify-between pt-6 border-t border-border">
                   <div className="flex items-center gap-2">
                     <TrendingUp size={16} className="text-accent" />
