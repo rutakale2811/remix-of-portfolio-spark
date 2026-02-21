@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import profileImg from "@/assets/profile-placeholder.jpg";
+import profileImg from "@/assets/profile-img.png";
 
 const HeroSection = () => {
   return (
@@ -16,14 +16,14 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full grid md:grid-cols-[1.2fr_0.8fr] gap-12 items-end">
         {/* Bold text */}
         <div className="order-2 md:order-1">
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             className="font-body text-xs tracking-[0.5em] uppercase text-accent mb-6"
           >
             And just like that...
-          </motion.p>
+          </motion.p> */}
 
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -43,22 +43,22 @@ const HeroSection = () => {
             className="divider-line mb-6 origin-left"
           />
 
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="font-body text-lg md:text-xl text-foreground/70 max-w-lg leading-relaxed mb-4 italic"
           >
             "I couldn't help but wonder... what if marketing was really about delivering value?"
-          </motion.p>
+          </motion.p> */}
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="font-body text-sm text-muted-foreground mb-10"
+            className="font-body text-lg text-black mb-10"
           >
-            Marketing Strategist · Storyteller · Northeastern University
+            Marketing Professional · Growth Thinker · Strategist · Media Strategist
           </motion.p>
 
           <motion.div

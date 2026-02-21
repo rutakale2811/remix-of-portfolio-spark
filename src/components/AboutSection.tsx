@@ -1,7 +1,7 @@
 import AnimatedSection from "./AnimatedSection";
 import { Sparkles, BookOpen, TrendingUp } from "lucide-react";
 import aboutImg from "@/assets/about-img.jpg";
-import profileImg from "@/assets/profile-placeholder.jpg";
+import profileImg from "@/assets/profile-img.png";
 
 const skills = ["Content Strategy", "Social Media Marketing", "SEO / SEM", "Brand Development", "Email Marketing", "Data Analytics", "Copywriting", "Campaign Management", "Market Research", "Public Relations", "Digital Advertising", "UX Research"];
 
@@ -32,25 +32,27 @@ const AboutSection = () => {
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={aboutImg} alt="Editorial flat lay" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
-              <p className="font-body text-base leading-[2] text-muted-foreground">
-                I'm Ruta Prakash Kale — a marketing professional, storyteller, and graduate student at Northeastern University who believes that the best marketing feels like a conversation, not a campaign.
-              </p>
+              
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
             <div className="space-y-8">
               <p className="font-body text-base leading-[2] text-muted-foreground">
+                I'm Ruta Prakash Kale — a marketing professional, storyteller, and graduate student at Northeastern University who believes that the best marketing feels like a conversation, not a campaign.
+              </p>
+              <p className="font-body text-base leading-[2] text-muted-foreground">
                 My work sits at the intersection of strategy, storytelling, and human connection.
                 I strive to contribute meaningfully, think intentionally, and create work that resonates —
                 whether it's a social media campaign, brand narrative, or a bold new idea.
               </p>
-              <div className="aspect-[3/4] overflow-hidden max-w-sm">
+              {/* <div className="aspect-[3/4] overflow-hidden max-w-sm">
                 <img src={profileImg} alt="Ruta Prakash Kale" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-              </div>
+              </div> */}
             </div>
           </AnimatedSection>
         </div>
+        <h3 className="font-display text-3xl font-bold text-foreground mb-8">My Skills</h3>
 
         {/* Highlights */}
         <div className="grid md:grid-cols-3 gap-6 mb-20">
@@ -67,7 +69,6 @@ const AboutSection = () => {
 
         {/* Skills */}
         <AnimatedSection>
-          <h3 className="font-display text-3xl font-bold text-foreground mb-8">My Toolkit</h3>
           <div className="flex flex-wrap gap-3">
             {skills.map((skill, i) => (
               <span key={i} className="px-6 py-2.5 font-body text-sm font-medium border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 cursor-default uppercase tracking-wider text-xs">

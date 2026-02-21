@@ -56,7 +56,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 className={`font-body text-[13px] tracking-wider uppercase transition-colors duration-300 ${
-                  isActive ? "text-accent font-semibold" : "text-muted-foreground hover:text-foreground"
+                  isActive ? "text-black font-semibold" : "text-black hover:text-black"
                 }`}
               >
                 {link.label}
@@ -101,7 +101,7 @@ const Navbar = () => {
                   transition={{ delay: i * 0.06 }}
                   onClick={() => setMobileOpen(false)}
                   className={`py-3 font-body text-lg font-medium uppercase tracking-wider ${
-                    activeSection === link.href.replace("#", "") ? "text-accent" : "text-muted-foreground"
+                    activeSection === link.href.replace("#", "") ? "text-black" : "text-black"
                   }`}
                 >
                   {link.label}
