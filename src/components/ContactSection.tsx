@@ -34,7 +34,7 @@ const ContactSection = () => {
             </motion.a>
 
             <motion.a
-              href="mailto:kale.ru@northeastern.edu"
+              href="mailto:rutakale2811@gmail.com"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
               className="flex items-center justify-center gap-3 px-10 py-4 border-2 border-background/30 text-background font-body text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:border-accent hover:text-accent"
