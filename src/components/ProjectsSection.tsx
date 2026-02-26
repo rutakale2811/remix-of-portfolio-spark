@@ -150,25 +150,25 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects grid */}
-        <div className="grid gap-6 md:grid-cols-3 md:grid-rows-2 md:h-[calc(100vh-20rem)]">
+        <div className="grid gap-6 md:grid-cols-3 md:grid-rows-2 md:h-[calc(100vh-20rem)] min-h-0">
           {projects.map((project, i) => (
-            <AnimatedSection key={i} delay={i * 0.06}>
+            <AnimatedSection key={i} delay={i * 0.06} className="min-w-0 min-h-0 overflow-hidden">
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.4 }}
                 onClick={() => setActiveIndex(i)}
-                className="group h-full min-h-0 p-6 md:p-7 bg-card border border-border hover:shadow-[0_25px_60px_-15px_hsl(var(--noir)/0.12)] transition-all duration-500 flex flex-col cursor-pointer"
+                className="group h-full min-h-0 min-w-0 p-6 md:p-7 bg-card border border-border hover:shadow-[0_25px_60px_-15px_hsl(var(--noir)/0.12)] transition-all duration-500 flex flex-col cursor-pointer overflow-hidden"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="font-body text-[10px] tracking-[0.3em] uppercase font-semibold text-accent">
+                <div className="flex items-center gap-3 mb-4 min-w-0 shrink-0">
+                  <span className="font-body text-[10px] tracking-[0.3em] uppercase font-semibold text-accent truncate">
                     {project.category}
                   </span>
                 </div>
 
-                <h3 className="font-display text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+                <h3 className="font-display text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300 line-clamp-3 break-words min-w-0">
                   {project.title}
                 </h3>
-                <p className="mt-4 font-body text-xs uppercase tracking-widest text-muted-foreground">
+                <p className="mt-4 font-body text-xs uppercase tracking-widest text-muted-foreground shrink-0">
                   Click to view details
                 </p>
               </motion.div>
@@ -195,7 +195,7 @@ const ProjectsSection = () => {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 16, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="relative w-[90%] max-w-3xl h-[70vh] bg-background border border-border shadow-2xl p-6 md:p-10 overflow-y-auto"
+              className="relative w-[90%] max-w-3xl h-[70vh] bg-background border border-border shadow-2xl p-6 md:p-10 overflow-y-auto overflow-x-hidden break-words"
             >
               <div className="flex items-center justify-between gap-4 mb-4">
                 <span className="font-body text-[11px] tracking-[0.3em] uppercase font-semibold text-accent">
