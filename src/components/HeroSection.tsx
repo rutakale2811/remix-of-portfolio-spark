@@ -58,7 +58,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="font-body text-lg text-black mb-10"
           >
-            Marketing Professional · Growth Thinker · Strategist · Media Strategist
+            Marketing Professional · Growth Thinker  · Media Strategist
           </motion.p>
 
           <motion.div
