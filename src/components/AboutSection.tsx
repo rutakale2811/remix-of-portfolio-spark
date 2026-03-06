@@ -7,7 +7,7 @@ const skills = ["Content Strategy", "Social Media Marketing", "SEO / SEM", "Bran
 
 const highlights = [
   { icon: <Sparkles className="text-accent" size={22} />, title: "Creative Strategist", desc: "Blending data-driven insights with creative storytelling to build campaigns that resonate." },
-  { icon: <BookOpen className="text-accent" size={22} />, title: "Continuous Learner", desc: "Currently pursuing MS in Corporate & Organizational Communication at Northeastern University." },
+  { icon: <BookOpen className="text-accent" size={22} />, title: "Continuous Learner", desc: "Graduated with MS in Digital Media - Connect and currently pursuing Graduate Certificate in Marketing from Northeastern University." },
   { icon: <TrendingUp className="text-accent" size={22} />, title: "Results-Oriented", desc: "I don't just create content — I measure impact and iterate for better outcomes." },
 ];
 
@@ -55,13 +55,13 @@ const AboutSection = () => {
         <h3 className="font-display text-3xl font-bold text-foreground mb-8">My Skills</h3>
 
         {/* Highlights */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
+        <div className="grid md:grid-cols-3 gap-6 mb-20 items-stretch">
           {highlights.map((h, i) => (
-            <AnimatedSection key={i} delay={i * 0.1}>
-              <div className="p-8 border-t-2 border-accent hover-lift cursor-default bg-card">
-                <div className="mb-4">{h.icon}</div>
-                <h3 className="font-display text-xl font-bold text-foreground mb-2">{h.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{h.desc}</p>
+            <AnimatedSection key={i} delay={i * 0.1} className="h-full min-h-0">
+              <div className="h-full p-8 border-t-2 border-accent hover-lift cursor-default bg-card flex flex-col">
+                <div className="mb-4 shrink-0">{h.icon}</div>
+                <h3 className="font-display text-xl font-bold text-foreground mb-2 shrink-0">{h.title}</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1 min-h-0">{h.desc}</p>
               </div>
             </AnimatedSection>
           ))}
