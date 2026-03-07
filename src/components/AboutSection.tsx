@@ -39,12 +39,13 @@ const AboutSection = () => {
           <AnimatedSection delay={0.2}>
             <div className="space-y-8">
               <p className="font-body text-base leading-[2] text-muted-foreground">
-                I'm Ruta Prakash Kale — a marketing professional, storyteller, and graduate student at Northeastern University who believes that the best marketing feels like a conversation, not a campaign.
+                I'm Ruta Prakash Kale — a marketing professional, storyteller, and graduate student at Northeastern University who believes the best marketing is ultimately about delivering real value to people. At its core, marketing is not just about promotion; it is about understanding people, solving problems, and communicating ideas in ways that matter.
               </p>
               <p className="font-body text-base leading-[2] text-muted-foreground">
-                My work sits at the intersection of strategy, storytelling, and human connection.
-                I strive to contribute meaningfully, think intentionally, and create work that resonates —
-                whether it's a social media campaign, brand narrative, or a bold new idea.
+                Marketing sits at the intersection of many disciplines — business, psychology, creativity, technology, and communication. This intersection is what makes the field so dynamic and meaningful to me. I enjoy bringing together strategy, storytelling, and human insight to craft messages and experiences that resonate with audiences and build authentic connections between brands and their communities.
+              </p>
+              <p className="font-body text-base leading-[2] text-muted-foreground">
+                Whether developing social media campaigns, shaping brand narratives, or exploring new creative ideas, I aim to create work that is thoughtful, impactful, and grounded in value. I am passionate about continuous learning, meaningful collaboration, and helping brands communicate their purpose in ways that feel genuine and lasting.
               </p>
               {/* <div className="aspect-[3/4] overflow-hidden max-w-sm">
                 <img src={profileImg} alt="Ruta Prakash Kale" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
@@ -77,6 +78,7 @@ const AboutSection = () => {
             ))}
           </div>
         </AnimatedSection>
+
       </div>
     </section>
   );

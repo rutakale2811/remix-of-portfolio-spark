@@ -18,7 +18,7 @@ const activities = [
   },
   {
     icon: <Palette className="text-accent" size={28} />,
-    title: "Lead Costume Designer & Tech Crew",
+    title: "Lead Costume Designer",
     org: "New Renaissance Theatre Company",
     description: "Designing costumes aligned with character arcs and production aesthetics. Managing budget allocation, material sourcing, and wardrobe logistics for live performances.",
   },
@@ -44,7 +44,7 @@ const activities = [
 
 const NortheasternSection = () => {
   return (
-    <section id="northeastern" className="relative section-padding overflow-hidden bg-card">
+    <section id="leadership" className="relative section-padding overflow-hidden bg-card">
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 mb-16 items-center">
           <AnimatedSection>

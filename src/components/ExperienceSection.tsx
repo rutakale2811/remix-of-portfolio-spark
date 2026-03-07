@@ -1,6 +1,10 @@
+import { useState } from "react";
 import AnimatedSection from "./AnimatedSection";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import experienceImg from "@/assets/experience-img.jpg";
+import tejaBhaiModalImg from "@/assets/teja-bhai-modal.png";
+import tejaBhai2Img from "@/assets/teja-bhai-2.png";
+import tejaBhai3Img from "@/assets/teja-bhai-3.png";
 
 const experiences = [
   {
@@ -38,6 +42,8 @@ const experiences = [
 ];
 
 const ExperienceSection = () => {
+  const [notableCampaignOpen, setNotableCampaignOpen] = useState(false);
+
   return (
     <section id="experience" className="relative section-padding overflow-hidden bg-card">
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -82,6 +88,15 @@ const ExperienceSection = () => {
                         </span>
                       ))}
                     </div>
+                    {exp.company === "iProspect Dentsu" && (
+                      <button
+                        type="button"
+                        onClick={() => setNotableCampaignOpen(true)}
+                        className="mt-4 px-6 py-2.5 font-body text-xs font-semibold tracking-widest uppercase border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                      >
+                        My Notable Campaign
+                      </button>
+                    )}
                   </motion.div>
                 </AnimatedSection>
               ))}
@@ -89,6 +104,65 @@ const ExperienceSection = () => {
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {notableCampaignOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center"
+          >
+            <div
+              className="absolute inset-0 bg-black/60"
+              onClick={() => setNotableCampaignOpen(false)}
+            />
+            <motion.div
+              initial={{ y: 16, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 16, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="relative w-[90%] max-w-3xl max-h-[70vh] bg-background border border-border shadow-2xl p-6 md:p-10 overflow-y-auto"
+            >
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">My most Notable Campaign</h3>
+              <h4 className="font-display text-xl font-bold text-accent mb-1">Teja Bhai Campaign</h4>
+              <p className="font-body text-sm font-semibold text-foreground mb-4">Brand — Angel One</p>
+              <p className="font-body text-sm text-muted-foreground leading-[1.9] mb-6">
+                Angel One is a prestigious financial firm and a part of the Bombay Stock Exchange, National Stock Exchange of India, National Commodity & Derivatives Exchange Limited and Multi Commodity Exchange of India Limited.
+              </p>
+              {/* Campaign visuals gallery */}
+              <div className="space-y-5 mb-6">
+                <div className="overflow-hidden rounded-lg border border-border shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+                  <img src={tejaBhaiModalImg} alt="From Concept to Conversion: The Teja Bhai Magic" className="w-full h-auto object-contain" />
+                </div>
+                <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="relative overflow-hidden rounded-lg border border-border shadow-[0_8px_30px_rgb(0,0,0,0.08)] aspect-[4/3]">
+                    <img src={tejaBhai2Img} alt="Authorized shares - Financial education content" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="relative overflow-hidden rounded-lg border border-border shadow-[0_8px_30px_rgb(0,0,0,0.08)] aspect-[4/3]">
+                    <img src={tejaBhai3Img} alt="Teja Bhai Campaign hero visual" className="w-full h-full object-cover" />
+                  </div>
+                  {/* Transparent stats card overlay between the 2 photos */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] sm:w-auto sm:min-w-[200px] px-6 py-4 rounded-lg bg-white/15 backdrop-blur-[2px] border border-white/20 shadow-lg">
+                    <ul className="space-y-2 font-body text-sm font-semibold text-foreground text-center">
+                      <li>+12,500 Reach per post</li>
+                      <li>+25,000 Impressions per post</li>
+                      <li>4k+ Views per reel</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setNotableCampaignOpen(false)}
+                className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

@@ -73,6 +73,14 @@ const HeroSection = () => {
             <a href="#contact" className="px-10 py-4 font-body text-sm font-semibold tracking-widest uppercase border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300">
               Let's Talk
             </a>
+            <a
+              href="/Ruta-Prakash-Kale-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-10 py-4 font-body text-sm font-semibold tracking-widest uppercase bg-accent text-accent-foreground hover:opacity-90 transition-all duration-300"
+            >
+              Resume
+            </a>
           </motion.div>
         </div>
 

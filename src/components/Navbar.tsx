@@ -6,7 +6,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Northeastern", href: "#northeastern" },
+  { label: "Leadership", href: "#leadership" },
   { label: "Philosophy", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
@@ -64,6 +64,22 @@ const Navbar = () => {
             );
           })}
           <a
+            href="/Ruta-Prakash-Kale-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2.5 text-[12px] font-body font-bold tracking-widest uppercase border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            Resume
+          </a>
+          <a
+            href="https://www.canva.com/design/DAHCcz7bm_Q/1Un8K6LuWTQT78wkWHY5Ig/edit?utm_content=DAHCcz7bm_Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2.5 text-[12px] font-body font-bold tracking-widest uppercase border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            Design Portfolio
+          </a>
+          <a
             href="#contact"
             className="px-6 py-2.5 text-[12px] font-body font-bold tracking-widest uppercase bg-foreground text-background hover:bg-accent hover:text-accent-foreground transition-all duration-300"
           >
@@ -108,9 +124,27 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <a
+                href="/Ruta-Prakash-Kale-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="mt-4 flex items-center justify-center gap-2 px-5 py-4 font-body font-bold uppercase tracking-widest border-2 border-foreground text-foreground text-sm"
+              >
+                Resume
+              </a>
+              <a
+                href="https://www.canva.com/design/DAHCcz7bm_Q/1Un8K6LuWTQT78wkWHY5Ig/edit?utm_content=DAHCcz7bm_Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center justify-center gap-2 px-5 py-4 font-body font-bold uppercase tracking-widest border-2 border-foreground text-foreground text-sm"
+              >
+                Design Portfolio
+              </a>
+              <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 flex items-center justify-center gap-2 px-5 py-4 font-body font-bold uppercase tracking-widest bg-foreground text-background text-sm"
+                className="flex items-center justify-center gap-2 px-5 py-4 font-body font-bold uppercase tracking-widest bg-foreground text-background text-sm"
               >
                 Let's Talk <ArrowRight size={14} />
               </a>
