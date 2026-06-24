@@ -62,7 +62,7 @@ const PhilosophySection = () => {
               </p>
               <blockquote className="border-l-4 border-accent pl-8">
                 <p className="font-display text-2xl md:text-3xl italic leading-snug">
-                  "Hiring me might feel like a gamble — but so is every decision that leads to <span className="text-accent">growth.</span>"
+                  "Marketing sits at the intersection of business, creativity, psychology, technology, and communication—and that's what makes me deeply passionate about it. The ability to combine strategy, storytelling, and human insight to create meaningful impact is what inspires me every day. <span className="text-accent"></span>"
                 </p>
               </blockquote>
             </div>

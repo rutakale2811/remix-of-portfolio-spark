@@ -4,18 +4,7 @@ import { Users, GraduationCap, Palette, Mic, Award, Globe } from "lucide-react";
 import northeasternImg from "@/assets/northeastern-img.jpg";
 
 const activities = [
-  {
-    icon: <Users className="text-accent" size={28} />,
-    title: "Social Media Coordinator",
-    org: "Husky Communicators",
-    description: "Leading digital growth and community engagement. Launched Husky Talks podcast, organized co-op panels, LinkedIn photoshoots, and Friendsgiving networking events.",
-  },
-  {
-    icon: <GraduationCap className="text-accent" size={28} />,
-    title: "Teaching & Research Assistant",
-    org: "Northeastern University",
-    description: "TA for Market Research and Entrepreneurship courses. As an RA, contributing to communications research — bridging theory and practice.",
-  },
+ 
   {
     icon: <Palette className="text-accent" size={28} />,
     title: "Lead Costume Designer",
@@ -28,12 +17,7 @@ const activities = [
     org: "Indian Classical Dance",
     description: "Trained in Bharatnatyam, one of the oldest classical dance forms of India — cultivating discipline, storytelling through movement, and artistic expression.",
   },
-  {
-    icon: <Award className="text-accent" size={28} />,
-    title: "Marketing & Promotions Head",
-    org: "MONETA — PAN India Financial Fest",
-    description: "Led marketing and promotions for a national-level financial fest during undergrad at Mumbai University, driving event awareness and attendee engagement.",
-  },
+  
   {
     icon: <Globe className="text-accent" size={28} />,
     title: "Certified in A2 French",
