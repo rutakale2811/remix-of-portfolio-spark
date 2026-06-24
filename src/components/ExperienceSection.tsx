@@ -1,170 +1,162 @@
-import { useState } from "react";
 import AnimatedSection from "./AnimatedSection";
-import { motion, AnimatePresence } from "framer-motion";
-import experienceImg from "@/assets/experience-img.jpg";
-import tejaBhaiModalImg from "@/assets/teja-bhai-modal.png";
-import tejaBhai2Img from "@/assets/teja-bhai-2.png";
-import tejaBhai3Img from "@/assets/teja-bhai-3.png";
+import { MapPin } from "lucide-react";
 
 const experiences = [
   {
-    role: "Marketing & Comms Assistant",
-    company: "Community Engaged Teaching & Research, Northeastern University",
-    location: "Boston, USA",
+    role: "Marketing & Communications Assistant",
+    company: "Community-Engaged Teaching & Research (CETR), Northeastern University",
+    location: "Boston, MA",
     period: "Jan 2026 – Present",
-    description: "Manage and execute CETR's marketing strategies, driving social media presence using Canva and Adobe. Lead WordPress website design and updates. Plan, promote, and coordinate high-impact academic and community events including workshops and orientations.",
-    tags: ["Social Media", "WordPress", "Event Marketing", "Adobe Suite"],
+    summary:
+      "Increased digital engagement by 30% through integrated marketing campaigns, social media strategy, communications outreach, and event promotion. Managed content calendars, redesigned the institutional website, conducted usability testing, accessibility audits, and journey mapping, while coordinating communications for initiatives engaging 150+ attendees and 100+ community partners.",
+  },
+  {
+    role: "Social Media Coordinator",
+    company: "Husky Communicators, Northeastern University",
+    location: "Boston, MA",
+    period: "May 2025 – Jun 2026",
+    summary:
+      "Promoted from Social Media Team Member to Social Media Coordinator, leading digital strategy, content creation, and community engagement initiatives to strengthen organizational visibility. Launched the Husky Talks Podcast and executed networking events, co-op panels, LinkedIn photoshoots, and professional development initiatives to drive student engagement and community growth.",
+  },
+  {
+    role: "Teaching & Research Assistant – Marketing Research",
+    company: "Northeastern University",
+    location: "Boston, MA",
+    period: "Sep 2025 – Dec 2025",
+    summary:
+      "Supported the academic success of 130+ students by managing course operations, performance reporting, and large-scale datasets. Conducted data analysis, maintained academic records, and provided instructional and research support.",
   },
   {
     role: "Digital Marketing Associate Co-op",
-    company: "TeamLogicIT",
-    location: "Ohio, USA",
-    period: "Apr 2025 – June 2025",
-    description: "Designed and scheduled daily social posts and monthly email newsletters using Adobe Suite, Canva, Sora, and Midjourney. Conducted B2B market research using AI-driven sentiment analysis tools and Google Trends. Brainstormed targeted outreach strategies for B2B decision makers.",
-    tags: ["B2B Marketing", "AI Tools", "Email Marketing", "Content Design"],
+    company: "TeamLogic IT",
+    location: "Cincinnati, OH",
+    period: "Apr 2025 – Jun 2025",
+    summary:
+      "Generated $70K+ in revenue within three months by executing B2B digital marketing initiatives, creating 50+ content assets, and developing automated email campaigns and nurture journeys. Conducted market research, audience segmentation, and content optimization to support lead generation.",
   },
   {
     role: "Marketing Intern",
-    company: "Homework Studios",
+    company: "Homework Studio",
     location: "Mumbai, India",
     period: "Mar 2023 – Aug 2023",
-    description: "Executed multi-channel marketing campaigns for Uber India, Spotify India, and Sony LIV. Collaborated on the Spotify × IFP \"Mellow Hours\" campaign, managing event logistics and live coverage. Increased page lead conversions by 15%.",
-    tags: ["Campaign Management", "Brand Strategy", "Spotify", "Uber India"],
+    summary:
+      "Contributed to integrated marketing campaigns for Spotify India, Uber India, and Sony LIV, driving a 15% increase in lead conversions through content creation, campaign execution, community engagement, and cross-functional collaboration.",
   },
   {
     role: "Social Media Intern",
     company: "iProspect Dentsu",
     location: "Mumbai, India",
     period: "Apr 2022 – May 2022",
-    description: "Developed social media strategies for SBI, ICICI Direct, and Angel One — including the iconic TEJA BHAI campaign driving 20% engagement increase. Executed bid management for paid search campaigns and delivered bi-weekly KPI reports to the marketing director.",
-    tags: ["Paid Media", "Financial Marketing", "Salesforce", "Campaign Analytics"],
+    summary:
+      "Contributed to $2.45M+ in campaign revenue and achieved a 20% increase in engagement by developing social and paid media strategies, managing budget allocations, campaign optimization, A/B testing, and performance reporting for leading financial brands.",
+  },
+  {
+    role: "Promotions & Marketing Head",
+    company: "MONETA – PAN India Financial Fest, R.A. Podar College of Commerce & Economics",
+    location: "Mumbai, India",
+    period: "Jan 2022",
+    summary:
+      "Generated 300+ registrations and attracted participants from across India by leading digital marketing, social media promotions, creative campaign development, and nationwide outreach for a PAN India-level financial festival.",
   },
 ];
 
-const ExperienceSection = () => {
-  const [notableCampaignOpen, setNotableCampaignOpen] = useState(false);
+const rowOne = experiences.slice(0, 4);
+const rowTwo = experiences.slice(4, 7);
 
+const METRIC_SPLIT = /(\$[\d.,]+[KMB]?\+?|\d[\d,]*\+?%?|\d+%)/g;
+const METRIC_TEST = /^(\$[\d.,]+[KMB]?\+?|\d[\d,]*\+?%?|\d+%)$/;
+
+const HighlightMetrics = ({ text }: { text: string }) => {
+  const parts = text.split(METRIC_SPLIT);
+
+  return (
+    <>
+      {parts.map((part, i) =>
+        METRIC_TEST.test(part) ? (
+          <span key={i} className="font-semibold text-accent">
+            {part}
+          </span>
+        ) : (
+          <span key={i}>{part}</span>
+        ),
+      )}
+    </>
+  );
+};
+
+const ExperienceSection = () => {
   return (
     <section id="experience" className="relative section-padding overflow-hidden bg-card">
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-[0.4fr_1fr] gap-16">
-          {/* Left: image + header */}
-          <div>
-            <AnimatedSection>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="divider-line" />
-                <p className="font-body text-xs tracking-[0.4em] uppercase text-accent font-semibold">Experience</p>
-              </div>
-              <h2 className="font-display text-5xl md:text-6xl font-black text-foreground mb-10">
-                The <span className="italic font-normal text-accent">journey</span>
-              </h2>
-            </AnimatedSection>
-            <AnimatedSection delay={0.1}>
-              <div className="aspect-[3/4] overflow-hidden sticky top-24">
-                <img src={experienceImg} alt="Working" className="w-full h-full object-cover" />
-              </div>
-            </AnimatedSection>
+        <AnimatedSection>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="divider-line" />
+            <p className="font-body text-xs tracking-[0.4em] uppercase text-accent font-semibold">Experience</p>
           </div>
+          <h2 className="font-display text-5xl md:text-6xl font-black text-foreground mb-4 leading-tight">
+            My <span className="italic font-normal text-accent">experiences</span>
+          </h2>
+          <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-xl mb-14">
+            A roadmap from Mumbai to Boston — marketing, research, and community impact at every stop.
+          </p>
+        </AnimatedSection>
 
-          {/* Right: timeline */}
-          <div>
-            <div className="space-y-16 pt-8">
-              {experiences.map((exp, i) => (
-                <AnimatedSection key={i} delay={i * 0.1}>
-                  <motion.div
-                    whileHover={{ x: 6 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative border-b border-border pb-12"
-                  >
-                    <span className="font-body text-xs tracking-[0.3em] uppercase text-accent font-semibold">{exp.period}</span>
-                    <h3 className="font-display text-3xl font-bold text-foreground mt-2 mb-1">{exp.role}</h3>
-                    <p className="font-body text-sm text-accent mb-1">{exp.company}</p>
-                    <p className="font-body text-xs text-muted-foreground mb-4">{exp.location}</p>
-                    <p className="font-body text-sm text-muted-foreground leading-[1.9] mb-5">{exp.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.tags.map((tag, j) => (
-                        <span key={j} className="px-3 py-1 text-[11px] font-body font-medium uppercase tracking-wider bg-background text-foreground border border-border">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    {exp.company === "iProspect Dentsu" && (
-                      <button
-                        type="button"
-                        onClick={() => setNotableCampaignOpen(true)}
-                        className="mt-4 px-6 py-2.5 font-body text-xs font-semibold tracking-widest uppercase border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300"
-                      >
-                        My Notable Campaign
-                      </button>
-                    )}
-                  </motion.div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
+        <div className="space-y-5">
+          <RoadmapRow items={rowOne} startIndex={0} />
+          <RoadmapRow items={rowTwo} startIndex={4} />
         </div>
       </div>
-
-      <AnimatePresence>
-        {notableCampaignOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center"
-          >
-            <div
-              className="absolute inset-0 bg-black/60"
-              onClick={() => setNotableCampaignOpen(false)}
-            />
-            <motion.div
-              initial={{ y: 16, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 16, opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="relative w-[90%] max-w-3xl max-h-[70vh] bg-background border border-border shadow-2xl p-6 md:p-10 overflow-y-auto"
-            >
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">My most Notable Campaign</h3>
-              <h4 className="font-display text-xl font-bold text-accent mb-1">Teja Bhai Campaign</h4>
-              <p className="font-body text-sm font-semibold text-foreground mb-4">Brand — Angel One</p>
-              <p className="font-body text-sm text-muted-foreground leading-[1.9] mb-6">
-                Angel One is a prestigious financial firm and a part of the Bombay Stock Exchange, National Stock Exchange of India, National Commodity & Derivatives Exchange Limited and Multi Commodity Exchange of India Limited.
-              </p>
-              {/* Campaign visuals gallery */}
-              <div className="space-y-5 mb-6">
-                <div className="overflow-hidden rounded-lg border border-border shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-                  <img src={tejaBhaiModalImg} alt="From Concept to Conversion: The Teja Bhai Magic" className="w-full h-auto object-contain" />
-                </div>
-                <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="relative overflow-hidden rounded-lg border border-border shadow-[0_8px_30px_rgb(0,0,0,0.08)] aspect-[4/3]">
-                    <img src={tejaBhai2Img} alt="Authorized shares - Financial education content" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="relative overflow-hidden rounded-lg border border-border shadow-[0_8px_30px_rgb(0,0,0,0.08)] aspect-[4/3]">
-                    <img src={tejaBhai3Img} alt="Teja Bhai Campaign hero visual" className="w-full h-full object-cover" />
-                  </div>
-                  {/* Transparent stats card overlay between the 2 photos */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] sm:w-auto sm:min-w-[200px] px-6 py-4 rounded-lg bg-white/15 backdrop-blur-[2px] border border-white/20 shadow-lg">
-                    <ul className="space-y-2 font-body text-sm font-semibold text-foreground text-center">
-                      <li>+12,500 Reach per post</li>
-                      <li>+25,000 Impressions per post</li>
-                      <li>4k+ Views per reel</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <button
-                type="button"
-                onClick={() => setNotableCampaignOpen(false)}
-                className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Close
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };
+
+type Experience = (typeof experiences)[number];
+
+const RoadmapRow = ({
+  items,
+  startIndex,
+}: {
+  items: Experience[];
+  startIndex: number;
+}) => (
+  <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+    {items.map((exp, i) => (
+      <AnimatedSection key={exp.role + exp.period} delay={(startIndex + i) * 0.05} className="h-full min-h-0">
+        <ExperienceCard exp={exp} />
+      </AnimatedSection>
+    ))}
+  </div>
+);
+
+const ExperienceCard = ({ exp }: { exp: Experience }) => (
+  <article className="group flex h-full min-h-[26rem] flex-col border border-border bg-background transition-all duration-500 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_24px_60px_-20px_hsl(var(--rose)/0.18)]">
+    <div className="h-1 w-full shrink-0 bg-gradient-to-r from-accent via-[hsl(var(--rose-light))] to-accent/20" aria-hidden />
+
+    <div className="flex flex-1 flex-col p-5 md:p-6">
+      <div className="mb-3 min-h-7">
+        <span className="inline-flex min-h-7 items-center rounded-sm bg-[hsl(var(--blush))] px-2.5 py-1 font-body text-[10px] font-semibold tracking-[0.15em] uppercase text-accent">
+          {exp.period}
+        </span>
+      </div>
+
+      <h3 className="min-h-[3.5rem] font-display text-[0.9rem] font-bold leading-snug text-foreground md:text-base">
+        {exp.role}
+      </h3>
+
+      <p className="mt-2 min-h-[3rem] font-body text-[11px] leading-snug text-foreground/75">
+        {exp.company}
+      </p>
+
+      <p className="mt-2 flex min-h-4 items-center gap-1 font-body text-[10px] text-muted-foreground">
+        <MapPin size={10} className="shrink-0 text-accent" aria-hidden />
+        {exp.location}
+      </p>
+
+      <p className="mt-4 flex-1 font-body text-xs leading-relaxed text-muted-foreground">
+        <HighlightMetrics text={exp.summary} />
+      </p>
+    </div>
+  </article>
+);
 
 export default ExperienceSection;

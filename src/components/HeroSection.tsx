@@ -71,7 +71,7 @@ const HeroSection = () => {
               See My Work
             </a>
             <a href="#contact" className="px-10 py-4 font-body text-sm font-semibold tracking-widest uppercase border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300">
-              Let's Talk
+              Hire me
             </a>
             <a
               href="/Ruta-Prakash-Kale-Resume.pdf"

@@ -7,7 +7,6 @@ const navLinks = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Leadership", href: "#leadership" },
-  { label: "Philosophy", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -83,7 +82,7 @@ const Navbar = () => {
             href="#contact"
             className="px-6 py-2.5 text-[12px] font-body font-bold tracking-widest uppercase bg-foreground text-background hover:bg-accent hover:text-accent-foreground transition-all duration-300"
           >
-            Let's Talk
+            Hire me
           </a>
         </div>
 
@@ -146,7 +145,7 @@ const Navbar = () => {
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-center gap-2 px-5 py-4 font-body font-bold uppercase tracking-widest bg-foreground text-background text-sm"
               >
-                Let's Talk <ArrowRight size={14} />
+                Hire me <ArrowRight size={14} />
               </a>
             </div>
           </motion.div>

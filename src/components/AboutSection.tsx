@@ -1,14 +1,49 @@
 import AnimatedSection from "./AnimatedSection";
-import { Sparkles, BookOpen, TrendingUp } from "lucide-react";
+import StatsSection from "./StatsSection";
 import aboutImg from "@/assets/about-img.jpg";
-import profileImg from "@/assets/profile-img.png";
 
-const skills = ["Content Strategy", "Social Media Marketing", "SEO / SEM", "Brand Development", "Email Marketing", "Data Analytics", "Copywriting", "Campaign Management", "Market Research", "Public Relations", "Digital Advertising", "UX Research"];
+const skills = [
+  "Content Strategy",
+  "Social Media Marketing",
+  "SEO / SEM",
+  "Brand Development",
+  "Email Marketing",
+  "Data Analytics",
+  "Copywriting",
+  "Campaign Management",
+  "Market Research",
+  "Public Relations",
+  "Digital Advertising",
+  "UX Research",
+];
 
-const highlights = [
-  { icon: <Sparkles className="text-accent" size={22} />, title: "Creative Strategist", desc: "Blending data-driven insights with creative storytelling to build campaigns that resonate." },
-  { icon: <BookOpen className="text-accent" size={22} />, title: "Continuous Learner", desc: "Graduated with MS in Digital Media - Connect and currently pursuing Graduate Certificate in Marketing from Northeastern University." },
-  { icon: <TrendingUp className="text-accent" size={22} />, title: "Results-Oriented", desc: "I don't just create content — I measure impact and iterate for better outcomes." },
+const tools = [
+  "WordPress",
+  "Figma",
+  "Canva",
+  "Adobe Creative Suite",
+  "Asana",
+  "Microsoft Office",
+  "Google Workspace",
+  "Meta Business Suite",
+  "Instagram",
+  "LinkedIn",
+  "Facebook",
+  "CapCut",
+  "Excel (Pivot Tables, VLOOKUP)",
+  "SPSS",
+  "Top Hat",
+  "Qualtrics",
+  "Marketo",
+  "Google Analytics",
+  "Google Trends",
+  "Midjourney",
+  "Claude",
+  "Sora",
+  "Salesforce",
+  "Fanpage Karma",
+  "Meta Ads Manager",
+  "Video Editing Tools",
 ];
 
 const AboutSection = () => {
@@ -25,60 +60,53 @@ const AboutSection = () => {
           </h2>
         </AnimatedSection>
 
-        {/* Editorial two-column with images */}
         <div className="grid md:grid-cols-2 gap-16 mb-24">
           <AnimatedSection delay={0.1}>
-            <div className="space-y-8">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src={aboutImg} alt="Editorial flat lay" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-              </div>
-              
+            <div className="aspect-[4/3] overflow-hidden">
+              <img src={aboutImg} alt="Editorial flat lay" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
             <div className="space-y-8">
               <p className="font-body text-base leading-[2] text-muted-foreground">
-                I'm Ruta Prakash Kale — a marketing professional, storyteller, and graduate student at Northeastern University who believes the best marketing is ultimately about delivering real value to people. At its core, marketing is not just about promotion; it is about understanding people, solving problems, and communicating ideas in ways that matter.
+                I'm Ruta Prakash Kale — a marketing professional, storyteller, and graduate student at Northeastern University passionate about creating meaningful connections between brands and people. I believe great marketing goes beyond promotion; it's about understanding audiences, solving problems, and delivering real value.
               </p>
               <p className="font-body text-base leading-[2] text-muted-foreground">
-                Marketing sits at the intersection of many disciplines — business, psychology, creativity, technology, and communication. This intersection is what makes the field so dynamic and meaningful to me. I enjoy bringing together strategy, storytelling, and human insight to craft messages and experiences that resonate with audiences and build authentic connections between brands and their communities.
+                By combining strategy, creativity, psychology, and data-driven insights, I craft compelling narratives and experiences that resonate with audiences and drive impact. Whether developing campaigns, shaping brand stories, or building communities, I strive to create work that is thoughtful, authentic, and purpose-driven.
               </p>
-              <p className="font-body text-base leading-[2] text-muted-foreground">
-                Whether developing social media campaigns, shaping brand narratives, or exploring new creative ideas, I aim to create work that is thoughtful, impactful, and grounded in value. I am passionate about continuous learning, meaningful collaboration, and helping brands communicate their purpose in ways that feel genuine and lasting.
-              </p>
-              {/* <div className="aspect-[3/4] overflow-hidden max-w-sm">
-                <img src={profileImg} alt="Ruta Prakash Kale" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-              </div> */}
             </div>
           </AnimatedSection>
         </div>
+
+        <StatsSection />
+
         <h3 className="font-display text-3xl font-bold text-foreground mb-8">My Skills</h3>
 
-        {/* Highlights */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20 items-stretch">
-          {highlights.map((h, i) => (
-            <AnimatedSection key={i} delay={i * 0.1} className="h-full min-h-0">
-              <div className="h-full p-8 border-t-2 border-accent hover-lift cursor-default bg-card flex flex-col">
-                <div className="mb-4 shrink-0">{h.icon}</div>
-                <h3 className="font-display text-xl font-bold text-foreground mb-2 shrink-0">{h.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1 min-h-0">{h.desc}</p>
-              </div>
-            </AnimatedSection>
-          ))}
-        </div>
-
-        {/* Skills */}
         <AnimatedSection>
           <div className="flex flex-wrap gap-3">
-            {skills.map((skill, i) => (
-              <span key={i} className="px-6 py-2.5 font-body text-sm font-medium border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 cursor-default uppercase tracking-wider text-xs">
+            {skills.map((skill) => (
+              <span
+                key={skill}
+                className="px-6 py-2.5 font-body text-sm font-medium border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 cursor-default uppercase tracking-wider text-xs"
+              >
                 {skill}
               </span>
             ))}
           </div>
-        </AnimatedSection>
 
+          <h4 className="font-display text-xl font-bold text-foreground mt-12 mb-6">Tools & Platforms</h4>
+          <div className="flex flex-wrap gap-3">
+            {tools.map((tool) => (
+              <span
+                key={tool}
+                className="px-5 py-2 font-body font-medium border border-border bg-card text-foreground hover:border-accent hover:text-accent transition-all duration-300 cursor-default tracking-wide text-xs"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
